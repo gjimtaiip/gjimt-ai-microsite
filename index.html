@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Integrated Programs | IKG PTU Affiliated</title>
+  <title>GJIMT AI Integrated Programs | IKG PTU Affiliated</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 0; background: #f7f9fc; color: #1f2937; }
     header { background: #0f172a; color: #fff; padding: 30px; text-align: center; }
@@ -18,6 +18,40 @@
     footer { background: #0f172a; color: #fff; text-align: center; padding: 20px; }
   </style>
 </head>
+
+<script>
+function submitAndDownload() {
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const email = document.getElementById("email").value;
+  const program = document.getElementById("program").value;
+
+  const formBaseUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfjGPpA2oVOCHI4nEJLne04wV7UDbeCtxu-nu8yXTzf4LLDeg/viewform?usp=header";
+
+  const formUrl =
+    formBaseUrl +
+    "?Full Name entry ID=" + encodeURIComponent(name) +
+    "&Mobile entry ID=" + encodeURIComponent(phone) +
+    "&Email entry ID=" + encodeURIComponent(email) +
+    "&Program entry ID=" + encodeURIComponent(program);
+
+  window.open(formUrl, "_blank");
+
+  setTimeout(() => {
+    const pdfMap = {
+      BBA: "pdfs/GJIMT BBA with AI Integration 2026.pdf",
+      BCA: "pdfs/GJIMT BCA with AI Integration 2026.pdf",
+      BCOM: "pdfs/GJIMT BCom(Hons) with AI Integration 2026.pdf",
+      MBA: "pdfs/GJIMT MBA with AI Integration 2026.pdf",
+      MCA: "pdfs/GJIMT MCA with AI Integration 2026.pdf"
+    };
+    window.location.href = pdfMap[program];
+  }, 1200);
+
+  return false;
+}
+</script>
+  
 <body>
 
 <header>
