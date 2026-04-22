@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GJIMT SkillX Canva Mastery Quiz</title>
+  <style>
+    :root {
+      --bg1: #fff7ed;
+      --bg2: #fff1f2;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --primary: #f97316;
+      --primary-dark: #ea580c;
+      --secondary: #ec4899;
+      --accent: #7c3aed;
+      --success: #16a34a;
+      --warning: #d97706;
+      --danger: #dc2626;
+      --border: #fed7aa;
+      --shadow: 0 20px 45px rgba(249, 115, 22, 0.15);
+      --radius: 22px;
+      box-sizing: border-box;
+    }
+    * {
+      box-sizing: inherit;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top left, #fff7ed 0, #fff1f2 35, #fdf2f8 65, #ffffff 100);
+      min-height: 100vh;
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 26px 18px 40px;
+    }
+    .hero {
+      background: linear-gradient(135deg, #fff7ed 0, #ffedd5 35, #ffe4e6 100);
+      border: 1px solid rgba(249, 115, 22, 0.18);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -60px;
+      top: 50px;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(236, 72, 153, 0.18) 0, rgba(236, 72, 153, 0) 70%);
+      border-radius: 50%;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid rgba(249, 115, 22, 0.25);
+      color: var(--primary-dark);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 8px 0 8px;
+      font-size: clamp(30px, 5vw, 46px);
+      line-height: 1.08;
+    }
+    .sub {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.6;
+      color: #374151;
+      max-width: 820px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(249, 115, 22, 0.12);
+      padding: 24px;
+    }
+    .card h2 {
+      margin: 0 0 16px;
+      font-size: 24px;
+    }
+    .card h3 {
+      margin: 0 0 12px;
+      font-size: 18px;
+    }
+    .muted {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #fff7ed;
+      color: #9a3412;
+      border: 1px solid #fdba74;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    label {
+      display: block;
+      margin: 14px 0 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #374151;
+    }
+    input,
+    select {
+      width: 100%;
+      padding: 14px 14px;
+      border-radius: 14px;
+      border: 1px solid #d1d5db;
+      font-size: 15px;
+      outline: none;
+      transition: 0.2s ease;
+      background: #fff;
+    }
+    input:focus,
+    select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.12);
+    }
+    .help-box {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #fff7ed, #fff1f2);
+      border: 1px solid rgba(249, 115, 22, 0.15);
+    }
+    .help-box ul {
+      margin: 10px 0 0 18px;
+      padding: 0;
+      line-height: 1.7;
+    }
+    .btn {
+      border: none;
+      border-radius: 14px;
+      padding: 14px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      box-shadow: 0 14px 28px rgba(236, 72, 153, 0.22);
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: #fff7ed;
+      color: #9a3412;
+      border: 1px solid #fdba74;
+    }
+    .btn-secondary:hover {
+      background: #ffedd5;
+    }
+    .btn-dark {
+      background: #111827;
+      color: #fff;
+    }
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .screen {
+      display: none;
+      margin-top: 24px;
+    }
+    .screen.active {
+      display: block;
+    }
+    .quiz-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+    .mini {
+      background: #fff7ed;
+      border: 1px solid #fdba74;
+      color: #9a3412;
+      border-radius: 16px;
+      padding: 12px 16px;
+      min-width: 140px;
+    }
+    .mini .label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #c2410c;
+      margin-bottom: 4px;
+    }
+    .mini .value {
+      font-size: 22px;
+      font-weight: 800;
+    }
+    .progress-wrap {
+      margin: 14px 0 22px;
+    }
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #6b7280;
+    }
+    .progress {
+      width: 100%;
+      height: 12px;
+      border-radius: 999px;
+      background: #fde7d5;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      transition: width 0.3s ease;
+    }
+    .q-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .q-tag {
+      font-size: 13px;
+      font-weight: 700;
+      padding: 8px 12px;
+      border-radius: 999px;
+    }
+    .tag-diff-easy {
+      background: #dcfce7;
+      color: #166534;
+    }
+    .tag-diff-medium {
+      background: #fef3c7;
+      color: #92400e;
+    }
+    .tag-diff-hard {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+    .tag-type {
+      background: #ede9fe;
+      color: #5b21b6;
+    }
+    .question-text {
+      font-size: 24px;
+      line-height: 1.35;
+      font-weight: 800;
+      margin: 12px 0 18px;
+    }
+    .options {
+      display: grid;
+      gap: 12px;
+    }
+    .option {
+      border: 1px solid #e5e7eb;
+      background: #fff;
+      border-radius: 18px;
+      padding: 15px 16px;
+      cursor: pointer;
+      transition: 0.2s ease;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .option:hover {
+      border-color: #fdba74;
+      transform: translateY(-1px);
+      box-shadow: 0 12px 22px rgba(249, 115, 22, 0.1);
+    }
+    .option.selected {
+      border-color: var(--primary);
+      background: #fff7ed;
+      box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.1);
+    }
+    .opt-key {
+      width: 30px;
+      height: 30px;
+      min-width: 30px;
+      border-radius: 50%;
+      background: #fff1f2;
+      color: #be185d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 14px;
+    }
+    .option.selected .opt-key {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+    }
+    .result-badge {
+      display: inline-flex;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+    .badge-excellent {
+      background: #dcfce7;
+      color: #166534;
+    }
+    .badge-good {
+      background: #fef3c7;
+      color: #92400e;
+    }
+    .badge-fair {
+      background: #e0f2fe;
+      color: #075985;
+    }
+    .badge-repeat {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+    .score-box {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 18px 0 20px;
+    }
+    .score-tile {
+      border-radius: 18px;
+      padding: 18px;
+      background: linear-gradient(135deg, #fff7ed, #fff);
+      border: 1px solid rgba(249, 115, 22, 0.15);
+      text-align: center;
+    }
+    .score-tile .big {
+      font-size: 30px;
+      font-weight: 800;
+      color: #9a3412;
+    }
+    .score-tile .small {
+      margin-top: 4px;
+      color: #6b7280;
+      font-size: 13px;
+    }
+    .advice {
+      margin-top: 12px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: #faf5ff;
+      border: 1px solid #ddd6fe;
+      line-height: 1.7;
+    }
+    .next-skillx {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .contact-box {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #111827, #1f2937);
+      color: #fff;
+    }
+    .contact-box a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .footer-note {
+      text-align: center;
+      color: #6b7280;
+      font-size: 13px;
+      margin-top: 20px;
+    }
+    .small-note {
+      font-size: 13px;
+      color: #6b7280;
+      margin-top: 10px;
+    }
+    @media (max-width: 860px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .score-box {
+        grid-template-columns: 1fr;
+      }
+      .question-text {
+        font-size: 21px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <div class="brand">
+        <div class="brand-badge">GJIMT SkillX</div>
+        <div class="brand-badge">Zero to Hero Workshops</div>
+        <div class="brand-badge">Canva Mastery Assessment</div>
+      </div>
+      <h1>SkillX Canva Mastery Quiz</h1>
+      <p class="sub">
+        End-of-workshop quiz to check how confidently you can use Canva for real designs, social media content, and presentations.
+        Your score will guide the right next SkillX workshop for you.
+      </p>
+    </div>
+
+    <!-- Intro Screen -->
+    <section id="screen-intro" class="screen active">
+      <div class="grid">
+        <div class="card">
+          <h2>Student Details</h2>
+
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" placeholder="Enter student's full name" />
+
+          <label for="phone">WhatsApp Phone Number</label>
+          <input type="tel" id="phone" placeholder="Enter WhatsApp number" />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter email address" />
+
+          <label for="program">Program</label>
+          <select id="program">
+            <option value="">Select Program</option>
+            <option value="BCA">BCA</option>
+            <option value="BBA">BBA</option>
+            <option value="BCom(Hons)">BCom(Hons)</option>
+            <option value="MBA">MBA</option>
+            <option value="MCA">MCA</option>
+            <option value="AI Integrated Program">AI Integrated Program</option>
+          </select>
+
+          <div class="help-box">
+            <h3>How this quiz works</h3>
+            <ul>
+              <li>10 questions are picked randomly from a pool of 30 Canva questions.</li>
+              <li>Mix of Easy and Medium questions focused on real Canva usage.</li>
+              <li>Each question has a 60-second timer; if time runs out, it auto-moves ahead.</li>
+              <li>Your performance band (Excellent, Good, Fair, or Repeat) will decide the next SkillX workshop suggestion.</li>
+            </ul>
+          </div>
+
+          <div class="btn-row">
+            <button class="btn btn-primary" onclick="startQuiz()">Start Canva Quiz</button>
+          </div>
+          <div class="small-note">
+            This is not a rejection test. It helps the SkillX team understand how much you have benefitted from the Canva workshop and what support you need next.
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>What this quiz checks</h2>
+          <p class="muted">
+            The quiz is aligned with the SkillX Canva-Based Photo &amp; Video Editing workshop and checks how confidently you can apply what you learnt on real tasks.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Using Templates</span>
+            <span class="pill">Brand Kit &amp; Consistency</span>
+            <span class="pill">Resizing Designs</span>
+            <span class="pill">Social Media Posts</span>
+            <span class="pill">Slides &amp; Presentations</span>
+            <span class="pill">Photo/Video Editing</span>
+            <span class="pill">Animations &amp; Effects</span>
+            <span class="pill">Export &amp; Sharing</span>
+          </div>
+
+          <div class="help-box" style="margin-top:22px;">
+            <h3>Outcome Bands &amp; Next Step</h3>
+            <ul>
+              <li><strong>9–10 correct</strong>: Excellent – Canva Confident. Recommended: Presentation Confidence + advanced SkillX modules.</li>
+              <li><strong>7–8 correct</strong>: Good – Strong Canva Understanding. Recommended: Public Speaking &amp; Presentation Confidence.</li>
+              <li><strong>5–6 correct</strong>: Fair – Needs Guided Practice. Recommended: Canva practice/revision batch.</li>
+              <li><strong>0–4 correct</strong>: Repeat / Support Recommended. Suggested: Repeat Canva SkillX / Digital Power Skills basics.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quiz Screen -->
+    <section id="screen-quiz" class="screen">
+      <div class="card">
+        <div class="quiz-top">
+          <div class="mini">
+            <div class="label">Question</div>
+            <div class="value"><span id="qNum">1</span> / <span id="qTotal">10</span></div>
+          </div>
+          <div class="mini">
+            <div class="label">Time Left</div>
+            <div class="value"><span id="timeLeft">60</span>s</div>
+          </div>
+          <div class="mini">
+            <div class="label">Current Score</div>
+            <div class="value"><span id="liveScore">0</span></div>
+          </div>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-meta">
+            <span>Progress</span>
+            <span id="progressText">0%</span>
+          </div>
+          <div class="progress">
+            <div class="progress-bar" id="progressBar"></div>
+          </div>
+        </div>
+
+        <div class="q-tag-row">
+          <span class="q-tag tag-diff-easy" id="difficultyTag">Difficulty</span>
+          <span class="q-tag tag-type" id="typeTag">Multiple Choice</span>
+        </div>
+
+        <div class="question-text" id="questionText"></div>
+
+        <div class="options" id="optionsWrap"></div>
+
+        <div class="btn-row">
+          <button class="btn btn-secondary" onclick="skipQuestion()">Skip Question</button>
+          <button class="btn btn-primary" onclick="nextQuestion()">Save &amp; Next</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Result Screen -->
+    <section id="screen-result" class="screen">
+      <div class="card">
+        <div id="resultBadge" class="result-badge">Result</div>
+        <h2 id="resultTitle">Your Result</h2>
+        <p class="muted" id="studentSummary"></p>
+
+        <div class="score-box">
+          <div class="score-tile">
+            <div class="big" id="scoreMarks">0 / 10</div>
+            <div class="small">Correct Answers</div>
+          </div>
+          <div class="score-tile">
+            <div class="big" id="scorePercent">0%</div>
+            <div class="small">Final Percentage</div>
+          </div>
+          <div class="score-tile">
+            <div class="big" id="scoreOutcome">Band</div>
+            <div class="small">Performance Band</div>
+          </div>
+        </div>
+
+        <div class="advice" id="adviceBox"></div>
+
+        <div class="next-skillx" id="nextSkillxBox"></div>
+
+        <div class="contact-box">
+          <h3 style="margin-top:0;">Next Step with SkillX</h3>
+          <p style="line-height:1.7; margin-bottom:14px;">
+            For guidance on Canva practice, advanced SkillX modules, or counselling, contact the SkillX team.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="tel:+917973241456">Call 79732 41456</a>
+            <a class="btn btn-primary" href="tel:+918988368113">Call 89883 68113</a>
+            <button class="btn btn-dark" onclick="shareOnWhatsApp()">Copy &amp; Share Result on WhatsApp</button>
+            <button class="btn btn-secondary" onclick="window.print()">Print / Download</button>
+            <button class="btn btn-secondary" onclick="restartQuiz()">Take Quiz Again</button>
+          </div>
+          <p class="small-note">
+            Tip: After copying, open WhatsApp and paste the result in your chat with the SkillX team along with any questions you have.
+          </p>
+        </div>
+      </div>
+      <div class="footer-note">
+        GJIMT SkillX Canva Mastery Quiz – Designed for end-of-workshop reflection and next-step SkillX guidance.
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const TOTAL_QUESTIONS = 10;
+
+    const questionBank = {
+      easy: [
+        {
+          id: "E1",
+          question: "In Canva, what is the easiest way to start designing an Instagram post?",
+          options: [
+            "Create a blank A4 document",
+            "Use an 'Instagram Post' template",
+            "Open a PowerPoint file",
+            "Start with a YouTube thumbnail size"
+          ],
+          answer: "Use an 'Instagram Post' template"
+        },
+        {
+          id: "E2",
+          question: "Which Canva feature helps you keep the same fonts and colours for your brand across all designs?",
+          options: [
+            "Brand Kit",
+            "Elements",
+            "Background Remover",
+            "Text Effects"
+          ],
+          answer: "Brand Kit"
+        },
+        {
+          id: "E3",
+          question: "If you want to quickly change the text style in Canva, which option should you use?",
+          options: [
+            "Upload",
+            "Text (Heading/Subheading/Body)",
+            "Share",
+            "Animate"
+          ],
+          answer: "Text (Heading/Subheading/Body)"
+        },
+        {
+          id: "E4",
+          question: "To add a photo from Canva's library, which panel do you use?",
+          options: [
+            "Uploads",
+            "Elements",
+            "Photos",
+            "Share"
+          ],
+          answer: "Photos"
+        },
+        {
+          id: "E5",
+          question: "When creating a poster for print, which file format is generally the safest to download?",
+          options: [
+            "JPG",
+            "PNG",
+            "PDF Print",
+            "MP4 Video"
+          ],
+          answer: "PDF Print"
+        },
+        {
+          id: "E6",
+          question: "You want a transparent background logo from Canva. Which export format should you try first?",
+          options: [
+            "JPG",
+            "PNG",
+            "MP4",
+            "GIF"
+          ],
+          answer: "PNG"
+        },
+        {
+          id: "E7",
+          question: "Which button do you click in Canva to download or share your final design?",
+          options: [
+            "File",
+            "Resize",
+            "Share",
+            "Animate"
+          ],
+          answer: "Share"
+        },
+        {
+          id: "E8",
+          question: "If an element is hiding behind an image, which tool helps you bring it to the front?",
+          options: [
+            "Transparency",
+            "Position (Forward/Backward)",
+            "Lock",
+            "Duplicate"
+          ],
+          answer: "Position (Forward/Backward)"
+        },
+        {
+          id: "E9",
+          question: "You want to change the entire design to a different colour style in one click. Which Canva feature helps?",
+          options: [
+            "Magic Write",
+            "Styles (Colour & Font combos)",
+            "Charts",
+            "Grid"
+          ],
+          answer: "Styles (Colour & Font combos)"
+        },
+        {
+          id: "E10",
+          question: "To keep all pages of a project together (for example, a multi-page brochure), you should:",
+          options: [
+            "Create each page in a separate design",
+            "Add multiple pages in one Canva design file",
+            "Only use templates",
+            "Export each page one by one as separate files"
+          ],
+          answer: "Add multiple pages in one Canva design file"
+        }
+      ],
+      medium: [
+        {
+          id: "M1",
+          question: "You created a square Instagram post but now need it as a vertical story. What is the most efficient Canva feature to use?",
+          options: [
+            "Change font size manually",
+            "Resize tool with 'Copy & Resize' to Story size",
+            "Download and re-upload the design",
+            "Take a screenshot and crop it"
+          ],
+          answer: "Resize tool with 'Copy & Resize' to Story size"
+        },
+        {
+          id: "M2",
+          question: "A client wants the same design in three formats: Instagram post, story, and LinkedIn post. What is the best Canva workflow?",
+          options: [
+            "Recreate the design from scratch for each format",
+            "Use one template and stretch it for all platforms",
+            "Use Resize with multiple sizes and adjust each copy",
+            "Export as PDF and crop for each platform"
+          ],
+          answer: "Use Resize with multiple sizes and adjust each copy"
+        },
+        {
+          id: "M3",
+          question: "In Canva, what is the benefit of using 'Folders'?",
+          options: [
+            "To change background colour",
+            "To group related designs and uploads for faster access",
+            "To change fonts in one click",
+            "To automatically post to social media"
+          ],
+          answer: "To group related designs and uploads for faster access"
+        },
+        {
+          id: "M4",
+          question: "You are designing a SkillX workshop poster. Which combination is most important for professional look?",
+          options: [
+            "Many different fonts and colours",
+            "Consistent fonts, limited colour palette, proper spacing",
+            "As many photos as possible",
+            "Very small text so everything fits"
+          ],
+          answer: "Consistent fonts, limited colour palette, proper spacing"
+        },
+        {
+          id: "M5",
+          question: "You want to animate only the heading text on a slide, not the full page. What should you do?",
+          options: [
+            "Apply 'Page Animation'",
+            "Apply animation only to the text element",
+            "Download as PNG",
+            "Increase letter spacing"
+          ],
+          answer: "Apply animation only to the text element"
+        },
+        {
+          id: "M6",
+          question: "Which Canva export option is best for a short Instagram Reel-style video created in Canva?",
+          options: [
+            "PDF Standard",
+            "PNG",
+            "MP4 Video",
+            "GIF only"
+          ],
+          answer: "MP4 Video"
+        },
+        {
+          id: "M7",
+          question: "You want your institute logo to never move by mistake while designing. Which feature should you use?",
+          options: [
+            "Duplicate",
+            "Lock",
+            "Group",
+            "Crop"
+          ],
+          answer: "Lock"
+        },
+        {
+          id: "M8",
+          question: "A teammate needs to edit the design with you. What is the best way to give access?",
+          options: [
+            "Send a screenshot on WhatsApp",
+            "Share a Canva link with 'Can edit' permission",
+            "Email the PNG file",
+            "Export as PDF and give that"
+          ],
+          answer: "Share a Canva link with 'Can edit' permission"
+        },
+        {
+          id: "M9",
+          question: "You are preparing slides for a SkillX presentation. What is a good Canva practice?",
+          options: [
+            "Use a different template for each slide",
+            "Use one slide template style and keep consistent fonts/colours",
+            "Use only images without text",
+            "Write full paragraphs on every slide"
+          ],
+          answer: "Use one slide template style and keep consistent fonts/colours"
+        },
+        {
+          id: "M10",
+          question: "Which Canva feature best supports planning a full social media campaign within one design file?",
+          options: [
+            "Multiple pages, each page for a different post",
+            "Only one page with all posts together",
+            "Using only videos",
+            "Using charts"
+          ],
+          answer: "Multiple pages, each page for a different post"
+        },
+        {
+          id: "M11",
+          question: "You have a photo in Canva that looks too dark. Which adjustment should you try first?",
+          options: [
+            "Increase brightness or exposure",
+            "Change font",
+            "Add page numbers",
+            "Use the crop tool only"
+          ],
+          answer: "Increase brightness or exposure"
+        },
+        {
+          id: "M12",
+          question: "For a clean layout, which alignment option is most helpful?",
+          options: [
+            "Random placement",
+            "Use position tools and smart guides to centre or align elements",
+            "Make everything the same colour",
+            "Only use one font size"
+          ],
+          answer: "Use position tools and smart guides to centre or align elements"
+        },
+        {
+          id: "M13",
+          question: "You want to replace all colours of a particular shade in the design at once (for example, change all blue to green). What Canva feature helps?",
+          options: [
+            "Change page background only",
+            "Use 'Change all' when editing a colour",
+            "Download and edit in another app",
+            "Use charts"
+          ],
+          answer: "Use 'Change all' when editing a colour"
+        },
+        {
+          id: "M14",
+          question: "While creating a SkillX certificate design, which Canva element helps you place the student's name in the correct area every time?",
+          options: [
+            "Guides and rulers",
+            "Audio",
+            "Charts",
+            "Frames"
+          ],
+          answer: "Guides and rulers"
+        },
+        {
+          id: "M15",
+          question: "You want to turn a static social media post into a simple animated post in Canva. What is the quickest step?",
+          options: [
+            "Apply a page animation and export as MP4 or GIF",
+            "Change all fonts",
+            "Download as PDF",
+            "Upload it to another app"
+          ],
+          answer: "Apply a page animation and export as MP4 or GIF"
+        },
+        {
+          id: "M16",
+          question: "You are using Canva to create a resume. What should you focus on most?",
+          options: [
+            "Heavy animations",
+            "Clarity of information, clean layout, and simple colour palette",
+            "Only images",
+            "Very small fonts to fit more content"
+          ],
+          answer: "Clarity of information, clean layout, and simple colour palette"
+        },
+        {
+          id: "M17",
+          question: "Which option helps you maintain spacing between items when moving them together?",
+          options: [
+            "Ungroup",
+            "Group elements before moving",
+            "Lock",
+            "Crop"
+          ],
+          answer: "Group elements before moving"
+        },
+        {
+          id: "M18",
+          question: "You are designing a SkillX LinkedIn post. Which place is best for the main message text?",
+          options: [
+            "Very close to all edges",
+            "Centre or upper-middle area with enough padding",
+            "On top of the logo",
+            "Hidden under an image"
+          ],
+          answer: "Centre or upper-middle area with enough padding"
+        },
+        {
+          id: "M19",
+          question: "In Canva, which file type is generally most suitable for high-quality social media images?",
+          options: [
+            "PDF Print",
+            "PNG",
+            "MP4",
+            "PowerPoint"
+          ],
+          answer: "PNG"
+        },
+        {
+          id: "M20",
+          question: "You want to record a short talking-head explanation for your slides directly inside Canva. Which feature supports this?",
+          options: [
+            "Present and record",
+            "Brand Kit",
+            "Guides",
+            "Frames"
+          ],
+          answer: "Present and record"
+        }
+      ]
+    };
+
+    let quizQuestions = [];
+    let currentIndex = 0;
+    let score = 0;
+    let selectedOption = null;
+    let timer = null;
+    let timeLeft = 60;
+
+    const student = {
+      fullName: "",
+      phone: "",
+      email: "",
+      program: ""
+    };
+
+    function shuffle(arr) {
+      return [...arr].sort(() => Math.random() - 0.5);
+    }
+
+    function pickQuestions() {
+      const all = [...questionBank.easy, ...questionBank.medium];
+      const shuffled = shuffle(all);
+      return shuffled.slice(0, TOTAL_QUESTIONS);
+    }
+
+    function showScreen(id) {
+      document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function getDifficulty(qid) {
+      if (qid.startsWith("E")) return "Easy";
+      if (qid.startsWith("M")) return "Medium";
+      return "Medium";
+    }
+
+    function startQuiz() {
+      const fullName = document.getElementById("fullName").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const program = document.getElementById("program").value;
+
+      if (!fullName || !phone || !email || !program) {
+        alert("Please fill all student details before starting the quiz.");
+        return;
+      }
+
+      student.fullName = fullName;
+      student.phone = phone;
+      student.email = email;
+      student.program = program;
+
+      quizQuestions = pickQuestions();
+      currentIndex = 0;
+      score = 0;
+      selectedOption = null;
+
+      document.getElementById("qTotal").textContent = TOTAL_QUESTIONS.toString();
+
+      showScreen("screen-quiz");
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      clearInterval(timer);
+      selectedOption = null;
+      timeLeft = 60;
+      document.getElementById("timeLeft").textContent = timeLeft.toString();
+
+      const q = quizQuestions[currentIndex];
+
+      document.getElementById("qNum").textContent = (currentIndex + 1).toString();
+      document.getElementById("liveScore").textContent = score.toString();
+      document.getElementById("questionText").textContent = q.question;
+
+      const diff = getDifficulty(q.id);
+      const diffTag = document.getElementById("difficultyTag");
+      diffTag.textContent = diff;
+      diffTag.className = "q-tag " + (diff === "Easy" ? "tag-diff-easy" : "tag-diff-medium");
+
+      document.getElementById("typeTag").textContent = "Multiple Choice";
+
+      const optionsWrap = document.getElementById("optionsWrap");
+      optionsWrap.innerHTML = "";
+      q.options.forEach((opt, index) => {
+        const optionEl = document.createElement("div");
+        optionEl.className = "option";
+        optionEl.innerHTML = `
+          <div class="opt-key">${String.fromCharCode(65 + index)}</div>
+          <div>${opt}</div>
+        `;
+        optionEl.onclick = () => selectOption(optionEl, opt);
+        optionsWrap.appendChild(optionEl);
+      });
+
+      const progress = (currentIndex / quizQuestions.length) * 100;
+      document.getElementById("progressBar").style.width = progress + "%";
+      document.getElementById("progressText").textContent = Math.round(progress) + "%";
+
+      timer = setInterval(() => {
+        timeLeft--;
+        document.getElementById("timeLeft").textContent = timeLeft.toString();
+        if (timeLeft <= 0) {
+          clearInterval(timer);
+          autoMoveNext();
+        }
+      }, 1000);
+    }
+
+    function selectOption(el, value) {
+      document.querySelectorAll(".option").forEach(o => o.classList.remove("selected"));
+      el.classList.add("selected");
+      selectedOption = value;
+    }
+
+    function saveCurrentAnswer() {
+      const q = quizQuestions[currentIndex];
+      if (selectedOption && selectedOption === q.answer) {
+        score++;
+      }
+    }
+
+    function nextQuestion() {
+      clearInterval(timer);
+      if (selectedOption) {
+        saveCurrentAnswer();
+      }
+      moveAhead();
+    }
+
+    function skipQuestion() {
+      clearInterval(timer);
+      moveAhead();
+    }
+
+    function autoMoveNext() {
+      moveAhead();
+    }
+
+    function moveAhead() {
+      currentIndex++;
+      if (currentIndex < quizQuestions.length) {
+        renderQuestion();
+      } else {
+        showResults();
+      }
+    }
+
+    function showResults() {
+      const percent = Math.round((score / quizQuestions.length) * 100);
+
+      let band = "";
+      let badgeClass = "";
+      let title = "";
+      let advice = "";
+      let nextWorkshop = "";
+
+      if (score >= 9) {
+        band = "Excellent";
+        badgeClass = "badge-excellent";
+        title = "Excellent – Canva Confident";
+        advice = `
+          <strong>Summary:</strong> You have demonstrated excellent Canva mastery. 
+          You are able to apply templates, layouts, brand consistency, and export options with confidence.
+          <br/><br/>
+          <strong>Guidance:</strong> You are ready to handle real communication and branding tasks for your institute, projects, or internships.
+          Keep experimenting with advanced features like animations, video editing, and multi-format campaigns.
+        `;
+        nextWorkshop = `
+          <strong>Next SkillX Journey:</strong> 
+          You are ready for higher-level presentation and communication modules.
+          Recommended next steps:
+          <ul>
+            <li><strong>Presentation Confidence:</strong> Use your Canva designs in powerful presentations and public speaking.</li>
+            <li><strong>AI-Enabled Learning:</strong> Combine Canva with AI tools to generate smarter content and campaigns.</li>
+          </ul>
+        `;
+      } else if (score >= 7) {
+        band = "Good";
+        badgeClass = "badge-good";
+        title = "Good – Strong Canva Understanding";
+        advice = `
+          <strong>Summary:</strong> You have a strong grasp of Canva tools and workflows. 
+          You can comfortably create and edit most designs, with minor refinement needed in optimisation and speed.
+          <br/><br/>
+          <strong>Guidance:</strong> Focus on polishing your layouts, alignment, and colour choices so that every design looks polished and professional.
+        `;
+        nextWorkshop = `
+          <strong>Next SkillX Journey:</strong>
+          You are ready to use Canva as a support tool for your professional image.
+          Recommended next steps:
+          <ul>
+            <li><strong>Public Speaking &amp; Presentation Confidence:</strong> Build confidence in delivering your Canva-based slides.</li>
+            <li><strong>Professional Resume &amp; LinkedIn:</strong> Use Canva templates to design impact resumes and LinkedIn banners.</li>
+          </ul>
+        `;
+      } else if (score >= 5) {
+        band = "Fair";
+        badgeClass = "badge-fair";
+        title = "Fair – Needs Guided Practice";
+        advice = `
+          <strong>Summary:</strong> You have understood Canva basics but need more <strong>guided practice</strong> to become fully confident. 
+          You can handle simple tasks but may struggle with layout decisions, resizing, or export choices.
+          <br/><br/>
+          <strong>Guidance:</strong> A practice or revision-oriented Canva session where you repeat key exercises (templates, brand kit, resizing, exports, and simple video posts) with trainer feedback will help you grow much faster.
+        `;
+        nextWorkshop = `
+          <strong>Next SkillX Journey:</strong>
+          Strengthen your Canva foundations through more hands-on work.
+          Recommended next steps:
+          <ul>
+            <li><strong>Canva-Based Photo &amp; Video Editing – Practice Batch:</strong> Redo core tasks with more examples and support.</li>
+            <li>Pair this with <strong>Functional English / Communication</strong> if you want to improve your content writing for designs.</li>
+          </ul>
+        `;
+      } else {
+        band = "Repeat / Support Recommended";
+        badgeClass = "badge-repeat";
+        title = "Support &amp; Repeat Workshop Recommended";
+        advice = `
+          <strong>Summary:</strong> You currently need additional support before you can use Canva independently. 
+          Some core ideas like choosing the right template, using brand kit, resizing, and export settings may need more practice.
+          <br/><br/>
+          <strong>Guidance:</strong> Repeating the Canva SkillX workshop or joining a special support batch will help you rebuild your confidence step-by-step.
+          Starting with Digital Power Skills basics can also improve your overall comfort with digital tools.
+        `;
+        nextWorkshop = `
+          <strong>Next SkillX Journey:</strong>
+          Focus on rebuilding confidence slowly with guided support.
+          Recommended next steps:
+          <ul>
+            <li><strong>Repeat Canva SkillX Workshop (Support Batch):</strong> Work through the same modules with more practice time.</li>
+            <li><strong>Digital Power Skills – Basics:</strong> Strengthen your core digital skills alongside Canva.</li>
+          </ul>
+        `;
+      }
+
+      document.getElementById("resultBadge").className = "result-badge " + badgeClass;
+      document.getElementById("resultBadge").textContent = band;
+      document.getElementById("resultTitle").textContent = title;
+
+      document.getElementById("studentSummary").textContent =
+        student.fullName + " | " + student.program + " | " + student.phone + " | " + student.email;
+
+      document.getElementById("scoreMarks").textContent = score + " / " + quizQuestions.length;
+      document.getElementById("scorePercent").textContent = percent + "%";
+      document.getElementById("scoreOutcome").textContent = band;
+      document.getElementById("adviceBox").innerHTML = advice;
+      document.getElementById("nextSkillxBox").innerHTML = nextWorkshop;
+
+      document.getElementById("progressBar").style.width = "100%";
+      document.getElementById("progressText").textContent = "100%";
+
+      showScreen("screen-result");
+    }
+
+    function buildWhatsAppMessage() {
+      const percent = Math.round((score / quizQuestions.length) * 100);
+      let band = "";
+      if (score >= 9) band = "Excellent – Canva Confident";
+      else if (score >= 7) band = "Good – Strong Canva Understanding";
+      else if (score >= 5) band = "Fair – Needs Guided Practice";
+      else band = "Repeat / Support Recommended";
+
+      return [
+        "GJIMT SkillX Canva Mastery Quiz Result",
+        "",
+        "Name: " + student.fullName,
+        "Program: " + student.program,
+        "WhatsApp: " + student.phone,
+        "Email: " + student.email,
+        "",
+        "Score: " + score + "/" + quizQuestions.length + " (" + percent + "%)",
+        "Performance Band: " + band,
+        "",
+        "For next-step guidance, please contact SkillX at +91 79732 41456 or +91 89883 68113."
+      ].join("\n");
+    }
+
+    function shareOnWhatsApp() {
+      const message = buildWhatsAppMessage();
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(message).then(() => {
+          alert("Result copied. Open WhatsApp and paste it in your chat with the SkillX team.");
+        }).catch(() => {
+          prompt("Copy this result and share on WhatsApp:", message);
+        });
+      } else {
+        prompt("Copy this result and share on WhatsApp:", message);
+      }
+    }
+
+    function restartQuiz() {
+      clearInterval(timer);
+      document.getElementById("fullName").value = "";
+      document.getElementById("phone").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("program").value = "";
+      showScreen("screen-intro");
+    }
+  </script>
+</body>
+</html>
